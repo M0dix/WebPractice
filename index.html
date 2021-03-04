@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type= "text/css" href="style.css">
+	<script src="script.js"></script>
+	<script src="test.js"></script>
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="header">
+		Изучение JavaScript
+	</div>
+	<div class="body">
+	<div class="flex">
+	<div class="description">
+	</div>
+	<div class="block">	
+		<p><span class="info">JavaScript – один из самых часто используемых языков программирования. Язык был создан в 1995 году компанией Netscape Communications. Целью языка было - сделать страницы в интернете более живыми и интерактивными.</span></p>
+		<p><span class="info">JavaScript обрел большую популярность среди веб-разработчиков, ведь у него много достоинств:</span></p>
+		<ul>
+			<li>Поддержка языка всеми браузерами</li>
+			<li>Простота применения</li>
+			<li>Быстрая скорость работы из-за частичной обработки веб-страниц на стороне клиента</li>
+			<li>Легкое освоение</li>
+			<li>Много библиотек и фреймворков</li>
+		</ul>
+		<p><span class="info">Что может JavaScript:</span></p>
+		<ul>
+			<li>Добавлять новый HTML-код на страницу, изменять существующее содержимое, модифицировать стили</li>
+			<li>Реагировать на действия пользователя, щелчки мыши, перемещения указателя, нажатия клавиш</li>
+			<li>Отправлять сетевые запросы на удалённые сервера, скачивать и загружать файлы</li>
+			<li>Получать и устанавливать куки, задавать вопросы посетителю, показывать сообщения</li>
+			<li>Запоминать данные на стороне клиента («local storage»)</li>
+		</ul>
+		<p><span class="info">Что не может JavaScript:</span></p>
+		<ul>
+			<li>JS не имеет доступа к системным функция ОС</li>
+			<li>JS не имеет доступа к другим вкладкам/окнам</li>
+			<li>Ограничен во взаимодействии с сайтами/доменами </li>
+		</ul>
+	<div  class="block_content">
+	<form method="get" name="name">
+		<label for="user_name">Введите имя</label>
+		<br>
+		<input type="text" name="user_name_text" maxlength="20" id="user_name" placeholder="Ваше имя">
+		<button name="user_name_button" value="Отправить" onclick="nameForm(); return false;" onsubmit="return false;">Отправить</button>
+	</form>
+	</div>
+	<div class="block_content">
+	<form method="get" name="area">
+		<label> Вычисление площади треугольника </label>
+		<br>
+		<input type="text" name="area_side" placeholder="Сторона" maxlength="20" id="area_side">
+		<input type="text" name="area_high" placeholder="Высота" maxlength="20">	
+		<button name="area_button" value="Вычислить площадь" onclick="takeArea(); return false" onsubmit="return false;">Вычислить площадь</button>
+	</form>
+	</div>
+	<div class="block_content">
+	<form method="get" name="strings">
+		<label>Сравнение количества элементов в строках</label>
+		<br>
+		<input type="text" name="first_string" placeholder="Первая строка" id="first_string">
+		<input type="text" name="second_string" placeholder="Вторая строка" >
+		<button name="area_button" value="Сравнить строки" onclick="compareStrings(); return false">Сравнить строки</button>
+	</form>	
+	</div>
+
+	<div class="block_content">
+		<form method="get" name="maxmin">
+		<label> Поиск минимального и максимального значения массива из 5 цифр</label>
+		<br>
+		<input type="text" name="array" placeholder="Массив" id="array">	
+		<button name="maxmin_button" value="Принять" onclick="takeMaxMin(); return false;">Принять</button>
+		</form>
+	</div>
+	<h2>Таймер</h2>
+	<div class="maintimer">
+	<div class="timer">
+            <p>
+                <span id="hours">0</span> : 
+                <span id="minutes">0</span> :
+                <span id="seconds">0</span>
+            </p>
+        </div>
+    <div class="metods">
+        <input type="button" onclick="maintimer.start()" value="ЗАПУСК" id="start">
+        <input type="button" onclick="maintimer.stop()" value="СТОП" id="stop">
+        <input type="button" onclick="maintimer.over()" value="РЕСТАРТ" id="restart">
+	</div>
+	</div>
+	<div id="test" class="test">
+	<div class="test-flex">	
+	<div id="vopros1" class="vopros1" style="display:block">
+		<p>Вопрос 1</p>
+		<p>В чем отличие между локальной и глобальной переменной?</p>
+		<label>
+			<input type="radio" name="1" value="1" data-right>
+			Глобальные видны повсюду, локальные только в функциях
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="1" value="0">
+			Глобальные можно переопределять, локальные нельзя
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="1" value="0">
+			Локальные можно переопределять, глобальные нельзя
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="1" value="0">
+			Локальные видны повсюду, глобальные только в функциях
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="1" value="0">
+			Отличий нет
+		</label>
+		<br>
+		<button id="kn_sl" onclick="sled_vopr();">Следующий вопрос</button>
+	</div>
+	<div id="vopros2" class="vopros2" style="display:none">
+		<p>Вопрос 2</p>
+		<p>Что такое условный оператор?</p>
+		<label>
+			<input type="radio" name="2" value="1" data-right>
+			Оператор сравнения значений
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="2" value="0">
+			Конструкция, что выполняет код несколько раз
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="2" value="0">
+			Конструкция для создания определенной переменной
+		</label>
+		<br>
+		<button id="kn_sl" onclick="sled_vopr();">Следующий вопрос</button>
+	</div>
+	<div id="vopros3" class="vopros3" style="display:none">
+		<p>Вопрос 3</p>
+		<p>Какие циклы есть в языке JavaScript?</p>
+		<label>
+			<input type="radio" name="3" value="0">
+			for, forMap, foreach, while
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="3" value="1" data-right>
+			for, while, do while
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="3" value="0">
+			for, forMap, foreach, while, do while
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="3" value="0">
+			for, while, do while, foreach
+		</label>
+		<br>
+		<button id="kn_sl" onclick="sled_vopr();">Следующий вопрос</button>
+	</div>
+	<div id="vopros4" class="vopros4" style="display:none">
+		<p>Вопрос 4</p>
+		<p>В чем разница между confirm и prompt?</p>
+		<label>
+			<input type="radio" name="4" value="0">
+			Они ничем не отличаются
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="4" value="1" data-right>
+			prompt вызывает диалоговое окно с полем для ввода, confirm - окно с подтверждением
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="4" value="0">
+			confirm вызывает диалоговое окно с полем для ввода, prompt - окно с подтверждением
+		</label>
+		<br>
+		<button id="kn_sl" onclick="sled_vopr();">Следующий вопрос</button>
+	</div>
+	<div id="vopros5" class="vopros5" style="display:none">
+		<p>Вопрос 5</p>
+		<p>Какие значения можно хранить в переменных?</p>
+		<label>
+			<input type="radio" name="5" value="1" data-right>
+			Строки, числа с точкой, простые числа и булевые выражения
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="5" value="0">
+			Только числа и строки
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="5" value="0">
+			Строки, числа с точкой и простые числа
+		</label>
+		<br>
+		<button id="kn_sl" onclick="sled_vopr();">Следующий вопрос</button>
+	</div>
+	<div id="vopros6" class="vopros6" style="display:none">
+		<p>Вопрос 6</p>
+		<p>Где верно указан запуск всплывающего окна?</p>
+		<label>
+			<input type="radio" name="6" value="0">
+			new alert ("Hi")
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="6" value="1" data-right>
+			alert ("Hi")
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="6" value="0">
+			info ("Hi")
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="6" value="0">
+			Нет верных вариантов
+		</label>
+		<br>
+		<button id="kn_sl" onclick="sled_vopr();">Следующий вопрос</button>
+	</div>
+	<div id="vopros7" class="vopros7" style="display:none">
+		<p>Вопрос 7</p>
+		<p>Где можно использовать JavaScript?</p>
+		<label>
+			<input type="radio" name="7" value="0">
+			Мобильные приложения
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="7" value="0">
+			Веб-приложения
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="7" value="0">
+			Серверные приложения
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="7" value="1" data-right>
+			Можно во всех перечисленных
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="7" value="0">
+			Прикладное программное обеспечение
+		</label>
+		<br>
+		<button id="kn_sl" onclick="sled_vopr();">Следующий вопрос</button>
+	</div>
+	<div id="vopros8" class="vopros8" style="display:none">
+		<p>Вопрос 8</p>
+		<p>Какие функции выполняет JS?</p>
+		<label>
+			<input type="radio" name="8" value="1" data-right>
+			Отвечает за функции на стороне клиента
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="8" value="0">
+			Отвечает за работу с базами данных
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="8" value="0">
+			Создает стилевое оформление сайта
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="8" value="0">
+			Создает разметку на странице сайта
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="8">
+			Выполняет работу с сервером
+		</label>
+		<br>
+		<button id="kn_sl" onclick="sled_vopr();">Следующий вопрос</button>
+	</div>
+	<div id="vopros9" class="vopros9" style="display:none">
+		<p>Вопрос 9</p>
+		<p>Где верно указан вывод данных?</p>
+		<label>
+			<input type="radio" name="9" value="0">
+			documentWrite("Hello");
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="9" value="0">
+			print(Hello);
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="9" value="0">
+			prompt("Hello")
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="9" value="0">
+			write("Hello");
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="9" value="1" data-right>
+			console.log("Hello");
+		</label>
+		<br>
+		<button id="kn_sl" onclick="sled_vopr();">Следующий вопрос</button>
+	</div>
+	<div id="vopros10" class="vopros10" style="display:none">
+		<p>Вопрос 10</p>
+		<p>Где верно указано имя переменной?</p>
+		<label>
+			<input type="radio" name="10" value="1" data-right>
+			var number = 12,5;
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="10" value="0" >
+			var num = "STRING";
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="10" value="0">
+			var isDone = 0;
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="10" value="0">
+			var b = false;
+		</label>
+		<br>
+	</div>
+	</div>
+	<button id="kn_pr" style="display:none;" onclick="proverit();">Проверить</button>
+	<div id="rezultat" class="rezultat"></div>
+	</div>
+
+	<button class="popupButton" id="popupButton" onclick="openPopup()">Заставка</button>
+	</div>
+	<div id="mypopup" class="popup">
+		<div class="popup-content">
+			<div class="popup-header">
+				<span id="popupNameUser"></span>
+				<span class="close">&times</span>
+			</div>
+			<div id="popup-body">
+			</div>
+		</div>
+	</div>
+
+	</div>
+	</div>
+</body>
+</html>
