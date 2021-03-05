@@ -1,7 +1,7 @@
 body {
 	max-width: 100%;
 	min-height: 100vh;
-	background: url("..images/background.jpg") 50% 50% no-repeat;
+	background: url("images/background.jpg") 50% 50% no-repeat;
 	background-size: cover;
 }
 
@@ -136,7 +136,7 @@ h2 {
 }
 
 #popup-body {
-	background: url("../images/popup_back.jpg"); 
+	background: url("images/popup_back.jpg"); 
 	padding: 2px 16px;
 	font-size: 50px;
 	min-height: 500px;
