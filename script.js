@@ -66,9 +66,10 @@ function takeMaxMin(){
 
 }
 
-let hours = 0;
-let minutes = 0;
-let seconds = 0;
+
+let hours = "00";
+let minutes = "00";
+let seconds = "00";
 let timer;
 
 
@@ -78,15 +79,36 @@ let maintimer = {
     document.getElementById("hours").innerHTML = hours.toString();
     document.getElementById("minutes").innerHTML = minutes.toString();
     document.getElementById("seconds").innerHTML = seconds.toString();
+
     seconds++;
+
+    if (seconds < 10){
+    	seconds = '0' + seconds % 10;
+    }
+
+    if (minutes < 10){
+    	minutes = '0' + minutes % 10;
+    }
+
+    if (hours < 10){
+    	hours = '0' + hours % 10;
+    }
+
     if (seconds == 60){
-      seconds = 0;
-      minutes++;
+        seconds = "00";
+        if (minutes < 9){
+        minutes = '0' + ((minutes % 10) + 1);
+    	}
+    	else minutes++;
     }
-    if (minutes == 60){
-      minutes = 0;
-      hours++;
+    if (hours == 60){
+        hours = "00";
+        if (hours < 9){
+        hours = '0' + ((hours % 10) + 1);
+    	}
+    	else hours++;
     }
+  
     timer = window.setTimeout("maintimer.counter()",1000);
   },
   start() {
@@ -100,15 +122,15 @@ let maintimer = {
     }
   },
   over(){
-    hours = 0;
-    minutes = 0;
-    seconds = 0;
+    hours = "00";
+    minutes = "00";
+    seconds = "00";
     if(timer || !timer) {
       window.clearInterval(timer);
       timer = null;
-      document.getElementById("hours").innerHTML="0";
-      document.getElementById("minutes").innerHTML="0";
-      document.getElementById("seconds").innerHTML="0";
+      document.getElementById("hours").innerHTML="00";
+      document.getElementById("minutes").innerHTML="00";
+      document.getElementById("seconds").innerHTML="00";
     }
   },
 };
